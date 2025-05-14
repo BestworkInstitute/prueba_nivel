@@ -1,202 +1,130 @@
 const questions = [
-  // A1 — Básico (1–10)
+  // A1 — Básico
   {
     question: "1. How do you say 'gracias' in English?",
-    explanation: "Basic vocabulary - greetings and thanks.",
+    explanation: "Basic vocabulary: polite expressions.",
     options: ["Thanks", "Hello", "Bye"],
     answer: 0
   },
   {
-    question: "2. What is your name?",
-    explanation: "Understanding personal questions.",
+    question: "2. How do you say '¿Cual es tu nombre?' in English?",
+    explanation: "Understanding basic personal questions.",
     options: ["What your name?", "What is your name?", "Is what your name?"],
     answer: 1
   },
   {
     question: "3. I ____ a student.",
-    explanation: "Verb 'to be' in the present simple.",
+    explanation: "Verb 'to be' in the present simple (first person).",
     options: ["is", "am", "are"],
     answer: 1
   },
   {
     question: "4. She ____ my friend.",
-    explanation: "Third person singular with 'to be'.",
+    explanation: "Verb 'to be' in third person singular.",
     options: ["are", "am", "is"],
     answer: 2
   },
   {
-    question: "5. How old ____ you?",
-    explanation: "Forming basic questions correctly.",
+    question: "5. Where ____ you from?",
+    explanation: "Forming questions with 'to be'.",
     options: ["is", "are", "do"],
     answer: 1
   },
+
+  // A2 — Pre-intermedio
   {
     question: "6. Choose the correct sentence:",
-    explanation: "Present simple structure.",
-    options: ["He go to school.", "He goes to school.", "He going to school."],
+    explanation: "Present simple: third person singular.",
+    options: ["He go to work.", "He goes to work.", "He going to work."],
     answer: 1
   },
   {
     question: "7. What is the opposite of 'hot'?",
-    explanation: "Basic adjective opposites.",
+    explanation: "Vocabulary: adjectives and opposites.",
     options: ["Cold", "Warm", "Wet"],
     answer: 0
   },
   {
     question: "8. I ____ two brothers.",
-    explanation: "Verb 'have' in present simple.",
+    explanation: "Present simple with the verb 'have'.",
     options: ["has", "have", "having"],
     answer: 1
   },
   {
-    question: "9. Where ____ you from?",
-    explanation: "Question with 'to be'.",
-    options: ["is", "are", "do"],
-    answer: 1
-  },
-  {
-    question: "10. She ____ in an office.",
-    explanation: "Third person present simple.",
-    options: ["work", "works", "working"],
-    answer: 1
-  },
-
-  // A2 — Básico alto (11–20)
-  {
-    question: "11. What’s the past tense of 'go'?",
-    explanation: "Common irregular past verb.",
-    options: ["goed", "went", "goes"],
-    answer: 1
-  },
-  {
-    question: "12. They ____ at home yesterday.",
-    explanation: "Past simple with 'to be'.",
-    options: ["was", "were", "are"],
-    answer: 1
-  },
-  {
-    question: "13. Does she ____ coffee?",
-    explanation: "Third person question in present simple.",
-    options: ["drink", "drinks", "drinking"],
-    answer: 0
-  },
-  {
-    question: "14. I didn’t ____ TV last night.",
-    explanation: "Past simple negative structure.",
+    question: "9. I didn’t ____ TV yesterday.",
+    explanation: "Negative form in past simple.",
     options: ["watch", "watched", "watches"],
     answer: 0
   },
   {
-    question: "15. I don’t have ____ apples.",
-    explanation: "Understanding quantifiers.",
-    options: ["some", "any", "a"],
-    answer: 1
-  },
-  {
-    question: "16. How ____ sugar do you want?",
-    explanation: "Use of uncountable quantifier.",
-    options: ["many", "much", "few"],
-    answer: 1
-  },
-  {
-    question: "17. I ____ my homework already.",
-    explanation: "Present perfect basic usage.",
-    options: ["did", "have done", "do"],
-    answer: 1
-  },
-  {
-    question: "18. What does 'usually' mean?",
-    explanation: "Understanding adverbs of frequency.",
-    options: ["All the time", "Sometimes", "Most of the time"],
-    answer: 2
-  },
-  {
-    question: "19. She ____ to music every day.",
-    explanation: "Habitual action in present.",
-    options: ["listen", "listens", "listening"],
-    answer: 1
-  },
-  {
-    question: "20. Choose the correct question:",
-    explanation: "Question formation with 'does'.",
-    options: ["Does he plays football?", "Does he play football?", "Do he play football?"],
-    answer: 1
+    question: "10. Does she ____ coffee?",
+    explanation: "Questions in present simple (third person).",
+    options: ["drink", "drinks", "drinking"],
+    answer: 0
   },
 
-  // B1 — Intermedio (21–26)
+  // B1 — Intermedio
   {
-    question: "21. I have lived here ____ 2019.",
+    question: "11. I have lived here ____ 2020.",
     explanation: "Present perfect with 'since'.",
     options: ["since", "for", "from"],
     answer: 0
   },
   {
-    question: "22. Choose the correct sentence:",
-    explanation: "Modal verb structure.",
-    options: [
-      "She can to drive a car.",
-      "She can drives a car.",
-      "She can drive a car."
-    ],
-    answer: 2
-  },
-  {
-    question: "23. If I ____ more time, I would travel.",
+    question: "12. If I ____ time, I would travel.",
     explanation: "Second conditional.",
-    options: ["had", "have", "will have"],
+    options: ["had", "have", "has"],
     answer: 0
   },
   {
-    question: "24. They have been working ____ hours.",
-    explanation: "Present perfect continuous + duration.",
-    options: ["since", "during", "for"],
-    answer: 2
-  },
-  {
-    question: "25. Choose the correct expression:",
-    explanation: "'Used to' for past habits.",
-    options: [
-      "I used to playing football.",
-      "I use to play football.",
-      "I used to play football."
-    ],
-    answer: 2
-  },
-  {
-    question: "26. The film was ____ than I expected.",
-    explanation: "Comparative adjective structure.",
-    options: ["gooder", "better", "more better"],
+    question: "13. She ____ to the gym every morning.",
+    explanation: "Present simple with habits (third person).",
+    options: ["go", "goes", "going"],
     answer: 1
   },
-
-  // B2 — Intermedio Alto (27–30)
   {
-    question: "27. Despite ____ tired, she finished the project.",
-    explanation: "Use of 'despite' with gerund.",
+    question: "14. I ____ my homework already.",
+    explanation: "Present perfect with 'already'.",
+    options: ["did", "have done", "do"],
+    answer: 1
+  },
+  {
+    question: "15. Choose the correct expression:",
+    explanation: "Talking about past habits with 'used to'.",
+    options: ["I used to playing.", "I use to play.", "I used to play."],
+    answer: 2
+  },
+
+  // B2 — Intermedio alto
+  {
+    question: "16. Despite ____ tired, she kept working.",
+    explanation: "Use of 'despite' followed by gerund.",
     options: ["be", "being", "was"],
     answer: 1
   },
   {
-    question: "28. Not only ____ she smart, but also kind.",
-    explanation: "Inversion structure (advanced).",
-    options: ["is", "she is", "does"],
+    question: "17. Not only ____ he smart, but also funny.",
+    explanation: "Inversion for emphasis (formal style).",
+    options: ["is", "he is", "does"],
     answer: 0
   },
   {
-    question: "29. Choose the formal alternative to 'I think':",
-    explanation: "Formal expressions for opinion.",
+    question: "18. The book was ____ than I expected.",
+    explanation: "Comparative form of 'good'.",
+    options: ["gooder", "better", "more better"],
+    answer: 1
+  },
+  {
+    question: "19. Which is more formal than 'I think'?",
+    explanation: "Formal opinion expressions.",
     options: ["I guess", "I believe", "In my opinion"],
     answer: 2
   },
   {
-    question: "30. Which sentence is correct?",
-    explanation: "Reported speech - B2 level structure.",
-    options: [
-      "He said he will come tomorrow.",
-      "He said he comes tomorrow.",
-      "He said he would come tomorrow."
-    ],
-    answer: 2
+    question: "20. He said he ____ come tomorrow.",
+    explanation: "Reported speech with 'would'.",
+    options: ["will", "would", "comes"],
+    answer: 1
   }
 ];
 

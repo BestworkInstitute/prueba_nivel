@@ -1,3 +1,4 @@
+// pages/index.jsx
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Head from 'next/head';
@@ -6,17 +7,14 @@ export default function Home() {
   const router = useRouter();
   const [form, setForm] = useState({ name: '', phone: '569', email: '' });
 
-  const isValid = () => {
-    return (
-      form.name.trim() !== '' &&
-      /^569\d{8}$/.test(form.phone) &&
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)
-    );
-  };
+  const isValid = () =>
+    form.name.trim() !== '' &&
+    /^569\d{8}$/.test(form.phone) &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!isValid()) return alert("Datos inválidos");
+    if (!isValid()) return alert("Por favor completa todos los datos correctamente.");
 
     const res = await fetch('/api/register', {
       method: 'POST',
@@ -25,10 +23,9 @@ export default function Home() {
     });
 
     if (res.ok) {
-      alert("Entrando al Test de Nivel... 🎓");
       router.push({ pathname: '/quiz', query: form });
     } else {
-      alert("Error al registrar tus datos.");
+      alert("Error al registrar. Intenta nuevamente.");
     }
   };
 
@@ -36,22 +33,37 @@ export default function Home() {
     <>
       <Head>
         <title>Test de Nivel de Inglés | BestWork</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
       </Head>
 
       <div style={styles.container}>
         <img src="https://bestwork.cl/wp-content/uploads/2023/05/Logo.png" alt="BestWork Logo" style={styles.logo} />
         <h1 style={styles.title}>Test Inicial de Nivel de Inglés</h1>
         <p style={styles.subtitle}>Completa tus datos para comenzar</p>
+
         <form onSubmit={handleSubmit} style={styles.form}>
           <input type="text" placeholder="Nombre y Apellido" value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })} style={styles.input} required />
-          <input type="tel" placeholder="Celular (569XXXXXXXX)" value={form.phone}
-            onChange={(e) => setForm({ ...form, phone: e.target.value })} style={styles.input} pattern="569\d{8}" required />
+
+          <div style={styles.phoneGroup}>
+            <span style={styles.prefix}>+569</span>
+            <input
+              type="tel"
+              placeholder="12345678"
+              value={form.phone.slice(3)}
+              maxLength={8}
+              pattern="\d{8}"
+              onChange={(e) => setForm({ ...form, phone: '569' + e.target.value.replace(/\D/g, '') })}
+              style={styles.phoneInput}
+              required
+            />
+          </div>
+
           <input type="email" placeholder="Correo Electrónico" value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })} style={styles.input} required />
+
           <button type="submit" style={styles.button}>Comenzar Test</button>
         </form>
       </div>
@@ -95,6 +107,27 @@ const styles = {
     fontSize: '1rem',
     borderRadius: '6px',
     border: '1px solid #ccc'
+  },
+  phoneGroup: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+  prefix: {
+    padding: '0.9rem',
+    backgroundColor: '#eee',
+    border: '1px solid #ccc',
+    borderRight: 'none',
+    borderTopLeftRadius: '6px',
+    borderBottomLeftRadius: '6px',
+    fontSize: '1rem'
+  },
+  phoneInput: {
+    flex: 1,
+    padding: '0.9rem',
+    fontSize: '1rem',
+    border: '1px solid #ccc',
+    borderTopRightRadius: '6px',
+    borderBottomRightRadius: '6px'
   },
   button: {
     padding: '0.9rem',
