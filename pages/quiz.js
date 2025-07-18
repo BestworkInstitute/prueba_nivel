@@ -144,7 +144,7 @@ export default function Quiz() {
 
           <div style={{ borderTop: '1px dashed #ccc', paddingTop: '20px' }}>
             <p style={{ fontSize: '14px', fontWeight: 'bold', color: '#0a7dd1' }}>
-              🎓 ¡Felicidades! Has obtenido una BECA del <strong style={{ color: '#e74c3c' }}>70%</strong> en el plan que más necesitas.
+              🎓 ¡Felicidades! Has obtenido una BECA del <strong style={{ color: '#e74c3c' }}>50%</strong> en el plan que más necesitas.
             </p>
           </div>
         </div>
